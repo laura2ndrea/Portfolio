@@ -327,11 +327,11 @@ body {
 
 #education{
     display: flex;
-    justify-content: center;
+    align-self: self-start;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    min-height: 100vh;
 }
 
 #education-title{
@@ -620,7 +620,7 @@ body {
 }
 
 
-@media (max-width: 675px) {
+@media (max-width: 770px) {
     /* Hamburger menu */
     .hamburguer-menu {
         display: block;
