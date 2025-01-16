@@ -34,7 +34,12 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 8;
+    z-index: 1;
+}
+
+.line {
+   border-top: solid white thin;
+   width: 80%;
 }
   
 /* Styles for the navigation menu */
@@ -119,8 +124,10 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 #banner-about{
@@ -179,6 +186,431 @@ body {
     border-radius: 50%; 
     z-index: 11;
 }
+
+#values{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.card{
+    --color: white;
+    position: relative;
+    background-color: rgba(27, 39, 53, 0.8);
+    width: 280px;
+    margin: 2rem;
+    border-radius: 1rem;
+    display: grid; 
+    place-content: center;
+    padding: 3rem 2rem; 
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.card::before, 
+.card::after {
+    content: '';
+    position: absolute;
+}
+
+.card::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(var(--color) 0deg, 
+        transparent 60deg,
+        transparent 100deg,
+        var(--color) 180deg, 
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2; 
+    animation: border 8s linear infinite;
+}
+
+@keyframes border {
+    to {
+        transform: rotateZ(-360deg);
+    }
+}
+
+.card::after {
+    background-color: rgba(27, 39, 53);
+    inset: 0.25rem;
+    border-radius: calc(1rem - 00.25rem);
+    z-index: -1;
+    transition: all 0.35s linear;
+}
+
+.card i {
+    font-size: 4rem;
+    margin-inline: auto; 
+    color: transparent;
+    -webkit-text-stroke: thin var(--color);
+}
+
+.card:hover {
+    color: var(--color);
+    -webkit-text-stroke-width: 0;
+}
+
+.card .title {
+    text-align: center;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    line-height: 1.875 rem;
+    margin-block: 2.5rem 1.5rem;
+}
+
+.card .detail {
+    line-height: 1.5rem;
+    text-align: center;
+    opacity: 0.75;
+    font-size: clamp(0.5rem, 2.7vw, 1rem);
+}
+
+#skills-education{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#skills, #education{
+    width: 50%;
+    min-width: 300px;
+    display: flex;
+}
+
+#skills{
+    position: relative;
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#skills-title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#skills-title h3{
+    position: relative; 
+    font-size: clamp(1em, 3.5vw, 2em);
+    margin: 30px;
+}
+
+.skills-content{
+    position: relative; 
+    width: 150px; 
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.skills-content i{
+    font-size: 4rem;
+    margin-inline: auto; 
+    -webkit-text-stroke: thin white;
+}
+
+#education{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+#education-title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#education-title h3{
+    position: relative; 
+    font-size:  clamp(1em, 3.5vw, 2em);
+    margin: 30px;
+}
+
+.card-education{
+    position: relative;
+    background-color: rgba(27, 39, 53, 0.8);
+    width: 70%;
+    height: 150px;
+    margin: 2rem;
+    border-radius: 1rem;
+    display: grid; 
+    place-content: center;
+    padding: 3rem 2rem; 
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.card-education::before, 
+.card-education::after {
+    content: '';
+    position: absolute;
+}
+
+.card-education::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(white 0deg, 
+        transparent 60deg,
+        transparent 100deg,
+        white 180deg, 
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2; 
+    animation: border 8s linear infinite;
+}
+
+@keyframes border {
+    to {
+        transform: rotateZ(-360deg);
+    }
+}
+
+.card-education::after {
+    background-color: rgba(27, 39, 53);
+    inset: 0.25rem;
+    border-radius: calc(1rem - 00.25rem);
+    z-index: -1;
+    transition: all 0.35s linear;
+}
+
+.card-education:hover {
+    color: white;
+    -webkit-text-stroke-width: 0;
+}
+
+.card-education .title {
+    text-align: center;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    line-height: 0.5rem;
+    margin-block: 2rem 1rem;
+}
+
+.card-education .detail {
+    line-height: 1.5rem;
+    text-align: center;
+    opacity: 0.75;
+    font-size: clamp(0.5rem, 2.7vw, 1rem);
+}
+
+/* Styles for the projects section */
+#projects{
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner-projects{
+    margin: 0;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+#banner-projects h2 {
+    font-family: 'Chewy', sans-serif; 
+    font-size: clamp(1em, 5vw, 3em);
+    background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+#projects-title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#projects-title h3{
+    position: relative; 
+    font-size: clamp(1em, 3.5vw, 2em);
+    margin: 30px;
+}
+
+.container-projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.card-project {
+    width: 325px;
+    background-color: rgba(27, 39, 53, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    z-index: 2;
+}
+
+.card-project img {
+    width: 100%;
+    height: 40%;
+}
+
+.card-project-content {
+    padding: 16px;
+}
+
+.card-project-content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-project-content p{
+    font-size: clamp(0.5rem, 2.7vw, 1rem);
+    line-height: 1.3;
+}
+
+.card-project-content .btn-project {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color:white; 
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color:#1b2735; 
+}
+
+#service-title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#service-title h3{
+    position: relative; 
+    font-size: clamp(1em, 3.5vw, 2em);
+    margin: 30px;
+}
+
+.container-services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card-service {
+    width: 325px;
+    background-color: rgba(27, 39, 53, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    z-index: 2;
+}
+
+.card-service img {
+    width: 100%;
+    height: auto;
+}
+
+.card-service-content {
+    padding: 16px;
+}
+
+.card-service-content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-service-content p{
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+/* Styles for the contact me section */
+#contact {
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner-contact{
+    margin: 0;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+#banner-contact h2 {
+    font-family: 'Chewy', sans-serif; 
+    font-size: clamp(1em, 5vw, 3em);
+    background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+#link-media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+    z-index: 2;
+}
+
+#link-media i{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#link-media a{
+    color: white;
+}
+
 
 @media (max-width: 675px) {
     /* Hamburger menu */
@@ -270,12 +702,31 @@ body {
     
     #who-i-am h3{
         font-size: clamp(1em, 5vw, 2em);
+        text-align: center;
     }
     
     #who-i-am img{
         width: 80%;
         border-radius: 50%; 
         z-index: 11;
+    }
+
+    #skills-education{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #skills, #education{
+        width: 100%;
+        min-width: 300px;
+        display: flex;
+    }
+
+    .card-project {
+        height: fit-content;
     }
 }
 
