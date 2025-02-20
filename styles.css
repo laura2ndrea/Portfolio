@@ -701,6 +701,9 @@ body {
 }
 
 @media (max-width: 990px) {
+    #home h1 {
+        font-size: clamp(1.5em, 5vw, 4em);
+    }
     /* Hamburger menu */
     .hamburguer-menu {
         display: block;
@@ -801,24 +804,13 @@ body {
     }
 
     #link-media i{
-        font-size: 35px;
-    
-    }
-}
-
-@media (max-width: 425px) {
-    #home h1 {
-        font-size: clamp(1.5em, 5vw, 4em);
-    }
-
-    #link-media i{
         font-size: 25px;
     
     }
 }
 
 /* Styles for when the page is very small */
-@media (max-width: 330px) {
+@media (max-width: 350px) {
     body {
         display: none;
     }
