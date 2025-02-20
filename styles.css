@@ -129,6 +129,7 @@ body {
     line-height: 0.3;
     text-transform: uppercase;
 }
+
 #home h4{
     font-size: clamp(0.3em, 5vw, 1em);
     max-width: 80%;
@@ -801,6 +802,17 @@ body {
 
     #link-media i{
         font-size: 35px;
+    
+    }
+}
+
+@media (max-width: 500px) {
+    #home h1 {
+        font-size: clamp(1.5em, 5vw, 4em);
+    }
+
+    #link-media i{
+        font-size: 25px;
     
     }
 }
