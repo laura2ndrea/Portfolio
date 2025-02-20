@@ -536,6 +536,11 @@ body {
     border-radius: 4px;
     margin-top: auto;
     color:#1b2735; 
+    transition: transform 0.3s linear;
+}
+
+.card-project-content .btn-project:hover {
+    transform: scale(1.15);
 }
 
 #service-title{
@@ -638,7 +643,11 @@ body {
 #link-media i{
     font-size: 50px;
     cursor: pointer;
+    transition: transform 0.3s linear;
+}
 
+#link-media i:hover {
+    transform: scale(1.2);
 }
 
 #link-media a{
